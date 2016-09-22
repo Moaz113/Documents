@@ -1,0 +1,537 @@
+Solaris-10 Mock test
+1. /etc/ftpusers contains names of accounts that are not allowed to login using ftp.
+  A. True
+
+  B. False
+True
+
+2. After recovering a damaged root filesystem, which command must be run to install a 'bootblk' on the partition so that it will be bootable?
+ A. bootblk
+
+ B. labelit
+
+ C. format
+
+ D. installboot
+
+D. installboot 
+
+
+3. After creating a new concatenation metadevice, what command must be run?
+ A. fsck /dev/md/rdsk/<device>
+
+ B. growfs /dev/md/rdsk/<device>
+ C. metadb -a -f <device>
+
+ D. metabase <device>
+
+B. growfs /dev/md/rdsk/<device>
+
+4. Which command displays information about the format of the /etc/passwd file?
+ A. man passwd
+
+ B. man -k passwd
+
+ C. man -s 4 passwd
+
+ D. passwd -help
+
+C. man -s 4 passwd
+"man passwd" with no options will display information about the passwd command, not the /etc/passwd file.
+
+5.  Which of the following commands will bring a Solaris System to single-user state?
+ A. init s
+
+ B. init Q
+
+ C. halt
+
+ D. shutdown –y
+A. init s
+D. shutdown -y
+"init s" will bring the system to single-user state, and the default run-level of the "shutdown" command is also single-user.
+
+
+6. What are the default options for the "ufsdump" command?
+ A. "cvf /dev/rmt/0"
+
+ B. "-o /dev/rmt/0"
+
+ C. "9uf /dev/rmt/0"
+
+ D. "9u"
+C. "9uf /dev/rmt/0"
+
+
+7. Which of the following commands can be used to restore a disk label from the label backup file /vtoc/c0d0s2?
+ A. labelit /vtoc/c0d0s2
+
+ B. labelit /vtoc/c0d0s2 /dev/rdsk/c0d0s2
+
+ C. format -l /dev/rdsk/c0d0s2
+
+ D. fmthard -s /vtoc/c0d0s2 /dev/rdsk/c0d0s2
+D. fmthard -s /vtoc/c0d0s2 /dev/rdsk/c0d0s2
+
+8. Which of the following nsswitch.conf templates will set a system to use local /etc files for all name services except hostname lookup?
+ A. nsswitch.conf
+ B. nsswitch.nis
+
+ C. nsswitch.files
+
+ D. nsswitch.dns
+
+D. nsswitch.dns
+
+9. Which command is used to tell Volume Manager that a floppy disk has been inserted into the floppy drive?
+ A. volcheck
+
+ B. voldisk
+
+ C. vold
+
+ D. volfloppy
+A.	volcheck
+
+
+10. Which of the following parameters cannot be modified once a file system has been created?
+ A. fragment size
+
+ B. minimum percentage of free space
+
+ C. optimization mode (time or space)
+
+ D. logical block size
+
+•	A. fragment size
+•	D. logical block size
+
+11. Which of the following statements about the PROCFS virtual filesystem is true?
+ A. it is located in /procfs
+
+ B. it contains one directory per active process
+
+ C. it is used at system startup to determine which processes to start by default
+ D. it is used by commands such as ps and prstat
+•	B. it contains one directory per active process
+•	D. it is used by commands such as ps and prstat
+
+12. Which two system files get updated when a new account is added to the system?
+ A. /etc/shadow
+
+ B. /etc/accounts
+
+ C. /etc/password
+
+ D. /etc/passwd
+
+A. /etc/shadow
+D. /etc/passwd
+
+13. Which of the following crontab entries will run the /usr/local/backup script every Monday at 5:00AM?
+ A. 0 5 * * 1 /usr/local/backup
+
+ B. 5 0 * * 1 /usr/local/backup
+
+ C. 5 0 monday * * /usr/local/backup
+
+ D. 0 5 * * monday /usr/local/backup
+A.	0 5 * * 1 /usr/local/backup
+
+
+14. Which of the following commands updates an existing Access Control List (ACL) for the file 'myfile', allowing user 'fred' to have read and write permission?
+ A. setfacl +r +w fred myfile
+
+ B. setfacl fred:+r fred:+w myfile
+ C. setfacl -s u:fred:rw- myfile
+
+ D. setfacl u:fred:+rw myfile
+
+
+15. After creating a swap partition and adding the appropriate entry to /etc/vfstab, which commands can be used to activate the new swap partition?
+ A. swapadd
+
+ B. swap -a /dev/dsk/<partition>
+
+ C. swapon
+
+ D. swapadd /etc/vfstab
+
+A. swapadd
+B. swap -a /dev/dsk/<partition>
+
+
+16. When running one of the restricted shells (rsh or rksh), which of the following commands will fail?
+ A. cd /tmp
+
+ B. touch xxx
+
+ C. ls -l > xxx
+
+ D. /usr/bin/ls
+
+•	A. cd /tmp
+C. ls -l > xxx
+D. /usr/bin/ls
+
+
+17. Which command can be used from a shell script to send messages to the system logging facility?
+ A. logger
+
+ B. syslog
+
+ C. syslogd
+
+ D. dmesg
+
+A.	logger
+
+18. Members of what group are allowed access to the admintool command?
+ A. admin
+
+ B. sysadmin
+
+ C. admintool
+
+ D. admtool
+
+B.	sysadmin
+
+19. Which of the following mount options are required when using a CacheFS?
+ A. –o ro
+
+ B. –F nfs
+
+ C. -o backfstype=<type>
+
+ D. -o cachedir=<directory>
+
+C. -o backfstype=<type>
+D. -o cachedir=<directory>
+
+-----------------------------===========================----------------------------------------
+ 
+Solaris Sys Admin Practice Test Part I
+ 
+1. On a boot server, where is the initial boot program name obtained for a client?  
+  /etc/progload 
+  /etc/bootme 
+  /kernel/boot 
+  /tftpboot 
+2. For the Ultra-1,2,4 and Enterprise systems, you will need to enable the flash prom update to permit 64-bit operations?  
+  True 
+  False 
+3. What is the result of the following command? setfacl -s u::rw-,g::r--,o:r--file1  
+  Access mode 644 replaces the existing ACLs for file1 
+  Access mode 644 is added to the existing ACLs for file1 
+  Access mode 644 is deleted from the existing ACLs for file1 
+4. What is the large area called in which metadevices are manipulated?  
+  workspace 
+  palette 
+  workarea 
+  canvas 
+5. You can protect the superuser account on a system by restricting access to a specific device through what file?  
+  /etc/default/login 
+  /etc/hosts.equiv 
+  /etc/default/passwd 
+  /etc/default/su 
+6. Which OpenBoot PROM command can be used to verify PROM settings?  
+  probe-scsi 
+  printenv 
+  banner 
+  devalias 
+7. The /bin and /lib sub-directories are under which parent directory?  
+  /usr 
+  /var 
+  /export 
+  /sbin 
+8. When a user creates a file or directory, what controls the default file permissions assigned to the file or directory?  
+  chown 
+  chgrp 
+  umask 
+  chmod 
+9. What file contains a list of file systems to be automatically mounted at boot up?  
+  /etc/vfstab 
+  /etc/dfs/dfstab 
+  /etc/fstab 
+  /sbin/boot 
+10. What command stops the print service?  
+  disable 
+  cancel 
+  lpsched 
+  lpshut 
+11. What does fsck do when it preens a file system?  
+  Checks writable file systems only 
+  Forces checking of the file system 
+  Checks and fixes the file system non-interactively 
+  Only checks to determine whether a file system needs checking 
+12. Which file controls the default policy on password aging?  
+  /etc/default/login 
+  /etc/default/passwd 
+  /etc/shadow 
+  /etc/passwd 
+13. Which of the following commands will start the ypbind program?  
+  ypinit -start 
+  ypwhich 
+  ypstart 
+  ypinit 
+14. Which of the following is associated with the Volume Manager?  
+  /dev/vx/dsk 
+  /dev/md/dsk 
+  /dev/vx/rdsk 
+  /dev/dsk 
+15. By default, how many pseudo-ttys are supported?  
+  128 
+  48 
+  16 
+  24 
+  64 
+16. What does multitasking enable a user to do?  
+  Share files 
+  Access multiple resources across the network 
+  Share network products 
+  Run more than one application at a time 
+17. To display all OpenBoot parameter settings, what should you type?  
+  nvalias 
+  printenv 
+  show all 
+  devalias 
+18. A umask value of 022 sets the default permission on a file to which of the following?  
+  766 
+  644 
+  755 
+  533 
+  022 
+19. Which line refers to the actual device driver in the /etc/remote file?  
+  hardwire 
+  dialers 
+  UNIX-9600 
+  tip9600 
+20. Where is the print spool directory located in Solaris?  
+  /usr/spool/lpd 
+  /var/spool/lpd 
+  /var/spool/lp 
+  /usr/spool/lp
+ 
+Answers to Part I
+ 
+1. On a boot server, where is the initial boot program name obtained for a client?: "/tftpboot"
+2. For the Ultra-1,2,4 and Enterprise systems, you will need to enable the flash prom update to permit 64-bit operations?: "True"
+3. What is the result of the following command? setfacl -s u::rw-,g::r--,o:r--file1: "Access mode 644 replaces the existing ACLs for file1"
+4. What is the large area called in which metadevices are manipulated?: "canvas"
+5. You can protect the superuser account on a system by restricting access to a specific device through what file?: "/etc/default/login"
+6. Which OpenBoot PROM command can be used to verify PROM settings?: "printenv"
+7. The /bin and /lib sub-directories are under which parent directory?: You answered "/usr": Correct!
+8. When a user creates a file or directory, what controls the default file permissions assigned to the file or directory?: "umask"
+9. What file contains a list of file systems to be automatically mounted at boot up?: "/etc/vfstab"
+10. What command stops the print service?: "lpshut"
+11. What does fsck do when it preens a file system?: "Checks and fixes the file system non-interactively"
+12. Which file controls the default policy on password aging?: "/etc/default/passwd"
+13. Which of the following commands will start the ypbind program?: "ypinit"
+14. Which of the following is associated with the Volume Manager?: "/dev/vx/dsk"
+15. By default, how many pseudo-ttys are supported?: "48"
+16. What does multitasking enable a user to do?: "Run more than one application at a time"
+17. To display all OpenBoot parameter settings, what should you type?: "printenv"
+18. A umask value of 022 sets the default permission on a file to which of the following?: "644"
+
+19. Which line refers to the actual device driver in the /etc/remote file?: "dialers"
+20. Where is the print spool directory located in Solaris?: "/var/spool/lp"
+ 
+ 
+ 
+Solaris Sys Admin Practice Test Part II
+ 
+1. A null modem cable is necessary when talking terminal to terminal without a modem?  
+  True 
+  False 
+2. Which command is used to change the system boot device?  
+  setdev boot disk3 
+  setenv boot-device disk3 
+  set boot-device disk3 
+3. Which of the following is an instance name composed of?  
+  Driver binding name and instance number 
+  logical device name and partition number 
+  full pathname and physical device number 
+4. Which of the following is used to propagate an updated NIS map to NIS slave servers?  
+  yppush 
+  ypupdate 
+  ypmaps 
+5. What utility has a built-in function to do incremental backups?  
+  ufsdump 
+  ppio 
+  dd 
+  tar 
+6. Which of the following is not a part of AdminSuite?  
+  Network Client Manager 
+  Storage Manager 
+  Database Manager 
+  Serial Port Manager 
+7. On file permissions, what does the "w" in the following mean? rwxr-xr-x  
+  Write privileges for the owner and group 
+  Write privileges for root only 
+  Write privileges for the owner 
+  Write privileges for everyone 
+8. Which of the following module types handles loadable system call including semaphore operation?  
+  sys 
+  drv 
+  exec 
+  misc 
+  strmod 
+9. The message `RPC Program not registered` is an indication of?  
+  it's trying to grab resource from someone who doesn't have the original 
+  already have the resource 
+  daemons on server aren't running 
+  daemons on client aren't running 
+10. When a new user account is created, the .profile is copied from which file?  
+  /etc/skel/default.profile 
+  /etc/profile 
+  /etc/skel/local.profile 
+11. Which of the following is a serial port device?  
+  /dev/ttya 
+  /dev/term/a 
+  /dev/fd 
+  /dev/bpp0 
+12. Select the correct method of setting a variable in the Bourne shell?  
+  set x=1 
+  x=1 
+  setenv x 1 
+13. Which file will automatically mount all of the NFS resources during the boot process or when the mountall command is used?  
+  /etc/vfstab 
+  /etc/dfs/dfstab 
+  /etc/mnttab 
+14. Which of the following is NOT a valid software configuration cluster to choose during installation of the Solaris 2.6 operating environment?  
+  Core 
+  End User 
+  Client 
+  Developer 
+15. What are the main parts of the UNIX operating system?  
+  devices,kernel,shell 
+  file structure,directory structure,shell 
+  file structure,kernel,shell 
+16. Which is NOT a primary element of a logical volume?  
+  Mirroring 
+  UFS logging 
+  Hot Spare pools 
+  Disk partitioning 
+17. Which of the following permits the kernel to run multiple tasks at the same time?  
+  distributed processing 
+  multitasking 
+  client-server module 
+  multiuser 
+18. You will get a warning message if all of the metadbs are on the same controller? 
+  True 
+  False 
+ =============================================================
+
+Sample Question – Solaris Certification
+Following are some sample questions . These are some of the representative questions and is meant to demonstrate the type of question you might expect in Solaris Certification examination and plan your study accordingly. No answers are given out of the belief that anyone preparing for the exam should be able to work it out .
+Choose all the correct answers.
+1) In Solaris how many disk slices a disk can have ?
+
+a) 8 b) 7 c) 6 d)1
+2)Which file is used to set the default mask in Solaris ?
+
+a)/etc/profile b) .profile c) /etc/system d) /etc/inittab
+
+3)What are the advantage for making disk partitions ?
+
+a) Easy to maintain b) Easy for backing up
+c) Limits problems to one partition only d) Space can be monitored easily.
+4 )What does a + sign in /etc/hosts.equiv indicates ?
+
+a) All hosts are allowed b) Only known hosts are allowed c) All users are allowed d) Unknown hosts are also allowed .
+5 )Which command is used to mount local file system ?
+
+a) mount -l b) mountall c) mount d) mount -r
+6) Which command line option gives a run level and output headings ?
+
+a) who -b b) who -r c) who -rh d) who -rH
+
+7) which command is used to change the auto-boot feature in sun ultra ?
+
+a) eeprom “auto-boot?”=true b) eeprom auto-boot?=true c) eeprom autoboot? true d) eeprom auto-boot = true ..
+8 ) If patch id is 123456-10 then its revision number is -
+
+a)123 b)456 c)10 d)6-10
+9)Which commands can be used to make a device alias
+
+a) devalias ay OK prompt b) dvalias at root prompt
+c) nvram at ok prompt d) drvconfig at root prompt.
+10) Where in Solaris encrypted passwords are stored ?
+
+a) /etc/passwd b) /etc/shadow c)/etc/default/passswd d)/etc/initttab
+11) What is required in a diskless workstation for Solaris workstation
+
+a) cpu, monitor, keyboard, hard disk b) cpu, monitor, keyboard, cdrom drive
+c) cpu, monitor, keyboard, Ethernet card d) cpu and Ethernet card only.
+12)Which of the following points to virtual file system ?
+
+a) /dev/dsk/c0t0d0s3 b) /dev/rdsk/c0t0d0s3
+c) /dev/md/dsk/c0t0d0s3 d) /dev/vx/rdsk/data/vol1
+13) Which Solaris command is used to correct filesystem problems?.
+
+a) newfs b) fssck c) mkfs d) format
+14) Which is the configuration file for the tip command
+
+a)/etc/tip.conf b) /etc/remote c) /etc/inittab.d d) .profile
+15) When automounter daemon needs to be restarted ?.
+
+a) When direct map is changes b) When indirect map is changes
+c) No need to restart d) When a new user is created
+16) What is the default configuration cluster in Solaris installation ?.
+
+a) Developer b) Core c) End user d) Entire Distriidution
+17) Which utility is used to administer the port monitor ?
+
+a)sacadm b) pmadm c) ttyadm d) admintool
+18) What is the command to assign a ip address to qfe network interface ?
+
+Write the command ……………………………………..
+19) 10 30 * * 4 /usr/bin/loginfo entry in crontab will execute the program
+
+a) Every Friday at 10.30 b) Every Thursday at 10.30
+c) Every Saturday 10.30 d) Every Wednesday at 10.30
+20) What do you need for a fresh Solaris Installation ?.
+
+a) Host Name b) IP Address c) Net mask d) Domain name
+21) How can you see the prom version ?
+
+a) show version b) prom c) banner d) version
+22) Which file enables you to disable root login on terminals ?.
+
+a) /etc/profile b) .profile
+c) /etc/default/login d) /etc/system
+23 ) Which directory contain run level control scripts ?.
+
+a) /etc/rc2.d b) /etc/init.d c) /etc/rc3.d d) /usr/bin
+24) Which command show the patch installed in the system ?
+
+a) patchadd -p b) showrev -p c) showpatch d) patchlist
+25) What are the advantage of having a virtual file system ?.
+
+a) Large capacity volumes b) Increased File system size
+c) Performance enhancement d) backup becomes easy
+26) Which file is used to define default run level for init process at booting time ?.
+
+a) /etc/ttyyab b) /etc//ttyadm
+c) /etc/inittab d) /etc/profile
+27) Which command shows kernel parameters and and driver module information ?.
+
+a) sysconfig b) prtconfig
+c) dmesg d) prtconf
+28) A multiuser operating system is one – in which
+
+a) Many users can work simultaneously b) Many Processes can work simultaneously
+c) A large number of users can be created d) A number of user home directories can be created.
+29) What is true about software packages ?.
+
+a) It is group of files & directories b) They are grouped to form clusters
+c) It is standard way of delivering software in Solaris d) They can be installed using pkgadd command.
+30)What type of names are used for administering disk drives in Solaris environment
+
+a) Physical b) Logical c) Virtual d) disk instance
+
+ 
+
+
+[A[A[A
